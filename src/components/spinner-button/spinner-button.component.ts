@@ -1,12 +1,12 @@
 import {ChangeDetectionStrategy, Component, Directive, ElementRef, forwardRef, Inject, Optional, Renderer2, Self, ViewEncapsulation} from '@angular/core';
-import {MdAnchor, MdButton} from "@angular/material/button";
+import {MatAnchor, MatButton} from "@angular/material/button";
 import {Platform} from "@angular/cdk/platform";
 import {FocusMonitor} from "@angular/cdk/a11y";
 
 
 @Component({
-  selector: `button[md-spinner-button], button[md-spinner-raised-button], button[md-spinner-icon-button],
-             button[md-spinner-fab], button[md-spinner-mini-fab],
+  selector: `button[mat-spinner-button], button[mat-spinner-raised-button], button[mat-spinner-icon-button],
+             button[mat-spinner-fab], button[mat-spinner-mini-fab],
              button[mat-spinner-button], button[mat-spinner-raised-button], button[mat-spinner-icon-button],
              button[mat-spinner-fab], button[mat-spinner-mini-fab]`,
   templateUrl: './spinner-button.component.html',
@@ -20,7 +20,7 @@ import {FocusMonitor} from "@angular/cdk/a11y";
 
 
 })
-export class MdSpinnerButtonComponent extends MdButton {
+export class HyMatSpinnerButtonComponent extends MatButton {
 
   constructor(platform: Platform,
               focusMonitor: FocusMonitor,
@@ -36,7 +36,7 @@ export class MdSpinnerButtonComponent extends MdButton {
 
 
 @Component({
-  selector: `a[md-spinner-button], a[md-spinner-raised-button], a[md-spinner-icon-button], a[md-spinner-fab], a[md-spinner-mini-fab],
+  selector: `a[mat-spinner-button], a[mat-spinner-raised-button], a[mat-spinner-icon-button], a[mat-spinner-fab], a[mat-spinner-mini-fab],
              a[mat-spinner-button], a[mat-spinner-raised-button], a[mat-spinner-icon-button], a[mat-spinner-fab], a[mat-spinner-mini-fab]`,
   host: {
     '[attr.tabindex]': 'disabled ? -1 : 0',
@@ -50,7 +50,7 @@ export class MdSpinnerButtonComponent extends MdButton {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MdSpinnerButtonAnchor extends MdAnchor {
+export class HyMatSpinnerButtonAnchor extends MatAnchor {
   constructor(platform: Platform,
               focusMonitor: FocusMonitor,
               elementRef: ElementRef,
@@ -60,7 +60,7 @@ export class MdSpinnerButtonAnchor extends MdAnchor {
 }
 
 
-/** Default color palette for round buttons (md-fab and md-mini-fab) */
+/** Default color palette for round buttons (mat-fab and mat-mini-fab) */
 const DEFAULT_ROUND_BUTTON_COLOR = 'accent';
 
 
@@ -69,10 +69,10 @@ const DEFAULT_ROUND_BUTTON_COLOR = 'accent';
  * @docs-private
  */
 @Directive({
-  selector: 'button[md-spinner-button], button[mat-spinner-button], a[md-spinner-button], a[mat-spinner-button]',
+  selector: 'button[mat-spinner-button], button[mat-spinner-button], a[mat-spinner-button], a[mat-spinner-button]',
   host: {'class': 'mat-button mat-spinner-button'}
 })
-export class MdSpinnerButtonCssMatStyler {
+export class HyMatSpinnerButtonCssMatStyler {
 }
 
 /**
@@ -81,11 +81,11 @@ export class MdSpinnerButtonCssMatStyler {
  */
 @Directive({
   selector:
-  'button[md-spinner-raised-button], button[mat-spinner-raised-button], ' +
-  'a[md-spinner-raised-button], a[mat-spinner-raised-button]',
+  'button[mat-spinner-raised-button], button[mat-spinner-raised-button], ' +
+  'a[mat-spinner-raised-button], a[mat-spinner-raised-button]',
   host: {'class': 'mat-raised-button mat-spinner-raised-button'}
 })
-export class MdSpinnerRaisedButtonCssMatStyler {
+export class HyMatSpinnerRaisedButtonCssMatStyler {
 }
 
 /**
@@ -94,10 +94,10 @@ export class MdSpinnerRaisedButtonCssMatStyler {
  */
 @Directive({
   selector:
-    'button[md-spinner-icon-button], button[mat-spinner-icon-button], a[md-spinner-icon-button], a[mat-spinner-icon-button]',
+    'button[mat-spinner-icon-button], button[mat-spinner-icon-button], a[mat-spinner-icon-button], a[mat-spinner-icon-button]',
   host: {'class': 'mat-icon-button mat-spinner-icon-button'}
 })
-export class MdSpinnerIconButtonCssMatStyler {
+export class HyMatSpinnerIconButtonCssMatStyler {
 }
 
 /**
@@ -105,13 +105,13 @@ export class MdSpinnerIconButtonCssMatStyler {
  * @docs-private
  */
 @Directive({
-  selector: 'button[md-spinner-fab], button[mat-spinner-fab], a[md-spinner-fab], a[mat-spinner-fab]',
+  selector: 'button[mat-spinner-fab], button[mat-spinner-fab], a[mat-spinner-fab], a[mat-spinner-fab]',
   host: {'class': 'mat-fab mat-spinner-fab'}
 })
-export class MdSpinnerFab {
-  constructor(@Self() @Optional() @Inject(forwardRef(() => MdButton)) button: MdButton,
-              @Self() @Optional() @Inject(forwardRef(() => MdAnchor)) anchor: MdAnchor) {
-    // Set the default color palette for the md-fab components.
+export class HyMatSpinnerFab {
+  constructor(@Self() @Optional() @Inject(forwardRef(() => MatButton)) button: MatButton,
+              @Self() @Optional() @Inject(forwardRef(() => MatAnchor)) anchor: MatAnchor) {
+    // Set the default color palette for the mat-fab components.
     // (button || anchor).color = 'accent';
   }
 }
@@ -122,13 +122,13 @@ export class MdSpinnerFab {
  * @docs-private
  */
 @Directive({
-  selector: 'button[md-spinner-mini-fab], button[mat-spinner-mini-fab], a[md-spinner-mini-fab], a[mat-spinner-mini-fab]',
+  selector: 'button[mat-spinner-mini-fab], button[mat-spinner-mini-fab], a[mat-spinner-mini-fab], a[mat-spinner-mini-fab]',
   host: {'class': 'mat-mini-fab mat-spinner-mini-fab'}
 })
-export class MdSpinnerMiniFab {
-  constructor(@Self() @Optional() @Inject(forwardRef(() => MdButton)) button: MdButton,
-              @Self() @Optional() @Inject(forwardRef(() => MdAnchor)) anchor: MdAnchor) {
-    // Set the default color palette for the md-mini-fab components.
+export class HyMatSpinnerMiniFab {
+  constructor(@Self() @Optional() @Inject(forwardRef(() => MatButton)) button: MatButton,
+              @Self() @Optional() @Inject(forwardRef(() => MatAnchor)) anchor: MatAnchor) {
+    // Set the default color palette for the mat-mini-fab components.
     // (button || anchor).color = 'accent';
   }
 }

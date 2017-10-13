@@ -15,25 +15,25 @@ import {
     HostBinding,
     HostListener
 } from "@angular/core";
-import {MdAnchor, MdButton} from "@angular/material";
+import {MatAnchor, MatButton} from "@angular/material";
 
 const Z_INDEX_ITEM: number = 23;
 
 @Component({
-    selector: 'smd-fab-trigger',
+    selector: 'hy-mat-fab-trigger',
     template: `
-        <ng-content select="[md-fab], [mat-fab]"></ng-content>
+        <ng-content select="[mat-fab], [mat-fab]"></ng-content>
     `
 })
-export class SmdFabSpeedDialTrigger {
+export class HyMatFabSpeedDialTrigger {
 
     /**
      * Whether this trigger should spin (360dg) while opening the speed dial
      */
-    @HostBinding('class.smd-spin')
+    @HostBinding('class.hy-mat-spin')
     @Input() spin: boolean = false;
 
-    constructor(@Inject(forwardRef(() => SmdFabSpeedDialComponent)) private _parent: SmdFabSpeedDialComponent) {
+    constructor(@Inject(forwardRef(() => HyMatFabSpeedDialComponent)) private _parent: HyMatFabSpeedDialComponent) {
     }
 
     @HostListener('click', ['$event'])
@@ -47,17 +47,17 @@ export class SmdFabSpeedDialTrigger {
 }
 
 @Component({
-    selector: 'smd-fab-actions',
+    selector: 'hy-mat-fab-actions',
     template: `
-        <ng-content select="[md-mini-fab], [mat-mini-fab]"></ng-content>
+        <ng-content select="[mat-mini-fab], [mat-mini-fab]"></ng-content>
     `
 })
-export class SmdFabSpeedDialActions implements AfterContentInit {
+export class HyMatFabSpeedDialActions implements AfterContentInit {
 
-    @ContentChildren(MdButton) _buttons: QueryList<MdButton>;
-    @ContentChildren(MdAnchor) _anchors: QueryList<MdAnchor>;
+    @ContentChildren(MatButton) _buttons: QueryList<MatButton>;
+    @ContentChildren(MatAnchor) _anchors: QueryList<MatAnchor>;
 
-    constructor(@Inject(forwardRef(() => SmdFabSpeedDialComponent)) private _parent: SmdFabSpeedDialComponent, private renderer: Renderer) {
+    constructor(@Inject(forwardRef(() => HyMatFabSpeedDialComponent)) private _parent: HyMatFabSpeedDialComponent, private renderer: Renderer) {
     }
 
     ngAfterContentInit(): void {
@@ -75,7 +75,7 @@ export class SmdFabSpeedDialActions implements AfterContentInit {
 
     private initButtonStates() {
         this.getChildren().forEach((button, i) => {
-            this.renderer.setElementClass(button._getHostElement(), 'smd-fab-action-item', true);
+            this.renderer.setElementClass(button._getHostElement(), 'hy-mat-fab-action-item', true);
             this.changeElementStyle(button._getHostElement(), 'z-index', '' + (Z_INDEX_ITEM - i));
         })
     }
@@ -86,7 +86,7 @@ export class SmdFabSpeedDialActions implements AfterContentInit {
             ...this._buttons.toArray(),
         ];
 
-        children.sort((a:any, b:any) => {
+        children.sort((a: any, b: any) => {
             let elementA = a._elementRef.nativeElement;
             let elementB = b._elementRef.nativeElement;
             let iA = Array.from(elementA.parentNode.children).indexOf(elementA);
@@ -145,17 +145,17 @@ export class SmdFabSpeedDialActions implements AfterContentInit {
 }
 
 @Component({
-    selector: 'smd-fab-speed-dial',
+    selector: 'hy-mat-fab-speed-dial',
     template: `
-        <div class="smd-fab-speed-dial-container">
-            <ng-content select="smd-fab-trigger"></ng-content>
-            <ng-content select="smd-fab-actions"></ng-content>
+        <div class="hy-mat-fab-speed-dial-container">
+            <ng-content select="hy-mat-fab-trigger"></ng-content>
+            <ng-content select="hy-mat-fab-actions"></ng-content>
         </div>
     `,
-    styleUrls: ['smd-fab-speed-dial.scss'],
+    styleUrls: ['hy-mat-fab-speed-dial.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class SmdFabSpeedDialComponent implements AfterContentInit {
+export class HyMatFabSpeedDialComponent implements AfterContentInit {
     private isInitialized: boolean = false;
     private _direction: string = 'up';
     private _open: boolean = false;
@@ -169,8 +169,9 @@ export class SmdFabSpeedDialComponent implements AfterContentInit {
     /**
      * Whether this speed dial is opened
      */
-    @HostBinding('class.smd-opened')
-    @Input() get open() {
+    @HostBinding('class.hy-mat-opened')
+    @Input()
+    get open() {
         return this._open;
     }
 
@@ -188,7 +189,8 @@ export class SmdFabSpeedDialComponent implements AfterContentInit {
     /**
      * The direction of the speed dial. Can be 'up', 'down', 'left' or 'right'
      */
-    @Input() get direction() {
+    @Input()
+    get direction() {
         return this._direction;
     }
 
@@ -208,7 +210,8 @@ export class SmdFabSpeedDialComponent implements AfterContentInit {
     /**
      * The animation mode to open the speed dial. Can be 'fling' or 'scale'
      */
-    @Input() get animationMode() {
+    @Input()
+    get animationMode() {
         return this._animationMode;
     }
 
@@ -228,7 +231,7 @@ export class SmdFabSpeedDialComponent implements AfterContentInit {
 
     @Output() openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    @ContentChild(SmdFabSpeedDialActions) _childActions: SmdFabSpeedDialActions;
+    @ContentChild(HyMatFabSpeedDialActions) _childActions: HyMatFabSpeedDialActions;
 
     constructor(private elementRef: ElementRef, private renderer: Renderer) {
     }
@@ -262,7 +265,7 @@ export class SmdFabSpeedDialComponent implements AfterContentInit {
         }
     }
 
-    private _setElementClass(elemClass:string , isAdd:boolean) {
-        this.renderer.setElementClass(this.elementRef.nativeElement, `smd-${elemClass}`, isAdd);
+    private _setElementClass(elemClass: string, isAdd: boolean) {
+        this.renderer.setElementClass(this.elementRef.nativeElement, `hy-mat-${elemClass}`, isAdd);
     }
 }

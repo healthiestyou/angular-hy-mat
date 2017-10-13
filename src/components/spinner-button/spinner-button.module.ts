@@ -1,26 +1,26 @@
 ///<reference path="spinner-button.component.ts"/>
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MdProgressSpinnerModule, MdRippleModule} from '@angular/material';
-import {MdSpinnerButtonAnchor, MdSpinnerButtonComponent, MdSpinnerButtonCssMatStyler, MdSpinnerFab, MdSpinnerIconButtonCssMatStyler, MdSpinnerMiniFab, MdSpinnerRaisedButtonCssMatStyler} from "./spinner-button.component";
+import {MatProgressSpinnerModule, MatRippleModule} from '@angular/material';
+import {HyMatSpinnerButtonAnchor, HyMatSpinnerButtonComponent, HyMatSpinnerButtonCssMatStyler, HyMatSpinnerFab, HyMatSpinnerIconButtonCssMatStyler, HyMatSpinnerMiniFab, HyMatSpinnerRaisedButtonCssMatStyler} from "./spinner-button.component";
 
 export * from './spinner-button.component';
 
 const COMPONENTS = [
-  MdSpinnerButtonComponent,
-  MdSpinnerButtonAnchor,
-  MdSpinnerMiniFab,
-  MdSpinnerFab,
-  MdSpinnerIconButtonCssMatStyler,
-  MdSpinnerRaisedButtonCssMatStyler,
-  MdSpinnerButtonCssMatStyler
+    HyMatSpinnerButtonComponent,
+    HyMatSpinnerButtonAnchor,
+    HyMatSpinnerMiniFab,
+    HyMatSpinnerFab,
+    HyMatSpinnerIconButtonCssMatStyler,
+    HyMatSpinnerRaisedButtonCssMatStyler,
+    HyMatSpinnerButtonCssMatStyler
 ];
 
 @NgModule({
-  imports: [CommonModule, MdProgressSpinnerModule, MdRippleModule],
-  declarations: COMPONENTS,
-  exports: COMPONENTS
+    imports: [CommonModule, MatProgressSpinnerModule, MatRippleModule],
+    declarations: COMPONENTS,
+    exports: COMPONENTS
 })
-export class SpinnerButtonModule {
+export class HySpinnerButtonModule {
 }
 

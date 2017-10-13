@@ -2,8 +2,8 @@
   "name": "angular-hy-mat",
   "author": "HealthiestYou",
   "license": "MIT",
-  "module": "dist/smd.es5.js",
-  "es2015": "dist/smd.js",
+  "module": "dist/hy-mat.es5.js",
+  "es2015": "dist/hy-mat.js",
   "peerDependencies": {
     "@angular/material": "2.0.0-beta.2",
     "@angular/core": "^4.0.1",

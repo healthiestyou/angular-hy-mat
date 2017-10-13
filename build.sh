@@ -11,13 +11,13 @@ ROLLUP="node node_modules/.bin/rollup"
 $NGC -p src/tsconfig-build.json
 
 # Rollup
-$ROLLUP build/angular-smd.js -o dist/angular-smd.js
+$ROLLUP build/angular-hy-mat.js -o dist/angular-smd.js
 
 # Run Angular Compiler to ES5
 $NGC -p src/tsconfig-es5.json
 
 # Rollup
-$ROLLUP build/angular-smd.js -o dist/angular-smd.es5.js
+$ROLLUP build/angular-hy-mat.js -o dist/angular-smd.es5.js
 
 # Copy non-js files from build
 rsync -a --exclude=*.js build/ dist
