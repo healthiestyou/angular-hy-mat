@@ -1,6 +1,6 @@
 @import '~material2-srcs/src/lib/button/button';
 
-.mat-spinner-raised-button, .mat-spinner-button, .mat-spinner-fab, .mat-spinner-mini-fab, .mat-spinner-icon-button {
+.hy-mat-spinner-raised-button, .hy-mat-spinner-button, .hy-mat-spinner-fab, .hy-mat-spinner-mini-fab, .hy-mat-spinner-icon-button {
 
   &[disabled] {
     background: rgba(0, 0, 0, 0.12);
@@ -12,11 +12,16 @@
 
   mat-spinner {
     position: absolute;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.6rem !important;
+    height: 1.6rem !important;
     font-size: 40%;
-    top: 50%;
-    left: 50%;
+    top: calc(50% - .8rem);
+    left: calc(50% - .8rem);
     transform: translate(-50%, -50%);
+
+    svg {
+      width: 1.6rem !important;
+      height: 1.6rem !important;
+    }
   }
 }

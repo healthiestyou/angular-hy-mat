@@ -5,10 +5,10 @@ import {FocusMonitor} from "@angular/cdk/a11y";
 
 
 @Component({
-  selector: `button[mat-spinner-button], button[mat-spinner-raised-button], button[mat-spinner-icon-button],
-             button[mat-spinner-fab], button[mat-spinner-mini-fab],
-             button[mat-spinner-button], button[mat-spinner-raised-button], button[mat-spinner-icon-button],
-             button[mat-spinner-fab], button[mat-spinner-mini-fab]`,
+  selector: `button[hy-mat-spinner-button], button[hy-mat-spinner-raised-button], button[hy-mat-spinner-icon-button],
+             button[hy-mat-spinner-fab], button[hy-mat-spinner-mini-fab],
+             button[hy-mat-spinner-button], button[hy-mat-spinner-raised-button], button[hy-mat-spinner-icon-button],
+             button[hy-mat-spinner-fab], button[hy-mat-spinner-mini-fab]`,
   templateUrl: './spinner-button.component.html',
   styleUrls: ['./spinner-button.component.scss'],
   host: {
@@ -36,8 +36,8 @@ export class HyMatSpinnerButtonComponent extends MatButton {
 
 
 @Component({
-  selector: `a[mat-spinner-button], a[mat-spinner-raised-button], a[mat-spinner-icon-button], a[mat-spinner-fab], a[mat-spinner-mini-fab],
-             a[mat-spinner-button], a[mat-spinner-raised-button], a[mat-spinner-icon-button], a[mat-spinner-fab], a[mat-spinner-mini-fab]`,
+  selector: `a[hy-mat-spinner-button], a[hy-mat-spinner-raised-button], a[hy-mat-spinner-icon-button], a[hy-mat-spinner-fab], a[hy-mat-spinner-mini-fab],
+             a[hy-mat-spinner-button], a[hy-mat-spinner-raised-button], a[hy-mat-spinner-icon-button], a[hy-mat-spinner-fab], a[hy-mat-spinner-mini-fab]`,
   host: {
     '[attr.tabindex]': 'disabled ? -1 : 0',
     '[attr.disabled]': 'disabled || null',
@@ -69,8 +69,8 @@ const DEFAULT_ROUND_BUTTON_COLOR = 'accent';
  * @docs-private
  */
 @Directive({
-  selector: 'button[mat-spinner-button], button[mat-spinner-button], a[mat-spinner-button], a[mat-spinner-button]',
-  host: {'class': 'mat-button mat-spinner-button'}
+  selector: 'button[hy-mat-spinner-button], button[hy-mat-spinner-button], a[hy-mat-spinner-button], a[hy-mat-spinner-button]',
+  host: {'class': 'mat-button hy-mat-spinner-button'}
 })
 export class HyMatSpinnerButtonCssMatStyler {
 }
@@ -81,9 +81,9 @@ export class HyMatSpinnerButtonCssMatStyler {
  */
 @Directive({
   selector:
-  'button[mat-spinner-raised-button], button[mat-spinner-raised-button], ' +
-  'a[mat-spinner-raised-button], a[mat-spinner-raised-button]',
-  host: {'class': 'mat-raised-button mat-spinner-raised-button'}
+  'button[hy-mat-spinner-raised-button], button[hy-mat-spinner-raised-button], ' +
+  'a[hy-mat-spinner-raised-button], a[hy-mat-spinner-raised-button]',
+  host: {'class': 'mat-raised-button hy-mat-spinner-raised-button'}
 })
 export class HyMatSpinnerRaisedButtonCssMatStyler {
 }
@@ -94,8 +94,8 @@ export class HyMatSpinnerRaisedButtonCssMatStyler {
  */
 @Directive({
   selector:
-    'button[mat-spinner-icon-button], button[mat-spinner-icon-button], a[mat-spinner-icon-button], a[mat-spinner-icon-button]',
-  host: {'class': 'mat-icon-button mat-spinner-icon-button'}
+    'button[hy-mat-spinner-icon-button], button[hy-mat-spinner-icon-button], a[hy-mat-spinner-icon-button], a[hy-mat-spinner-icon-button]',
+  host: {'class': 'mat-icon-button hy-mat-spinner-icon-button'}
 })
 export class HyMatSpinnerIconButtonCssMatStyler {
 }
@@ -105,8 +105,8 @@ export class HyMatSpinnerIconButtonCssMatStyler {
  * @docs-private
  */
 @Directive({
-  selector: 'button[mat-spinner-fab], button[mat-spinner-fab], a[mat-spinner-fab], a[mat-spinner-fab]',
-  host: {'class': 'mat-fab mat-spinner-fab'}
+  selector: 'button[hy-mat-spinner-fab], button[hy-mat-spinner-fab], a[hy-mat-spinner-fab], a[hy-mat-spinner-fab]',
+  host: {'class': 'mat-fab hy-mat-spinner-fab'}
 })
 export class HyMatSpinnerFab {
   constructor(@Self() @Optional() @Inject(forwardRef(() => MatButton)) button: MatButton,
@@ -122,8 +122,8 @@ export class HyMatSpinnerFab {
  * @docs-private
  */
 @Directive({
-  selector: 'button[mat-spinner-mini-fab], button[mat-spinner-mini-fab], a[mat-spinner-mini-fab], a[mat-spinner-mini-fab]',
-  host: {'class': 'mat-mini-fab mat-spinner-mini-fab'}
+  selector: 'button[hy-mat-spinner-mini-fab], button[hy-mat-spinner-mini-fab], a[hy-mat-spinner-mini-fab], a[hy-mat-spinner-mini-fab]',
+  host: {'class': 'mat-mini-fab hy-mat-spinner-mini-fab'}
 })
 export class HyMatSpinnerMiniFab {
   constructor(@Self() @Optional() @Inject(forwardRef(() => MatButton)) button: MatButton,

@@ -21,6 +21,6 @@ const COMPONENTS = [
     declarations: COMPONENTS,
     exports: COMPONENTS
 })
-export class HySpinnerButtonModule {
+export class HyMatSpinnerButtonModule {
 }
 
