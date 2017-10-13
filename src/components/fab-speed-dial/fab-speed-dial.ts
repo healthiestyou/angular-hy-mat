@@ -152,7 +152,7 @@ export class HyMatFabSpeedDialActions implements AfterContentInit {
             <ng-content select="hy-mat-fab-actions"></ng-content>
         </div>
     `,
-    styleUrls: ['hy-mat-fab-speed-dial.scss'],
+    styleUrls: ['fab-speed-dial.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class HyMatFabSpeedDialComponent implements AfterContentInit {
