@@ -4,6 +4,9 @@
   "description": "angular material components",
   "author": "HealthiestYou",
   "license": "MIT",
+  "dependencies": {
+    "material2-srcs": "git+https://github.com/angular/material2#2.0.0-beta.12"
+  },
   "devDependencies": {
     "hammerjs": "2.0.8",
     "@angular/core": "^4.4.4",
@@ -12,7 +15,6 @@
     "@angular/compiler-cli": "^4.4.4",
     "@angular/material": "2.0.0-beta.12",
     "@angular/cdk": "2.0.0-beta.12",
-    "material2-srcs": "git+https://github.com/angular/material2#2.0.0-beta.12",
     "rollup": "^0.41.6",
     "rxjs": "^5.4.0",
     "typescript": "^2.3.4",
