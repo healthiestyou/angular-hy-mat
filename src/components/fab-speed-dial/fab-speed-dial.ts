@@ -123,7 +123,7 @@ export class HyMatFabSpeedDialActions implements AfterContentInit {
                 transform = 'scale(0)';
                 opacity = '0';
             } else {
-                transform = this.getTranslateFunction((button._getHostElement().clientHeight + 14 * (i + 1) - (i * 5)) + 'px');
+                transform = this.getTranslateFunction(((button._getHostElement().clientHeight + 14) * (i + 1) - (i * 5)) + 'px');
             }
             this.changeElementStyle(button._getHostElement(), 'transition-delay', transitionDelay + 'ms');
             this.changeElementStyle(button._getHostElement(), 'opacity', opacity);
